@@ -1,0 +1,464 @@
+Practical point of view, simple program to calculate protein isoelectric point 
+          
+      Polish version
+
+
+      Previous
+      Theoretical basis of isoelectric point calculation, i.e. how to calculate 
+      isoelectric point of proteinIndex
+      Protein isoelectric point calculatorNext
+      Free QT4 version of 
+      Isoelectric Point Calculator v. 1.0
+
+                                    
+
+Practical point of view (examplary program, which can calculate isoelectric 
+point of given protein)
+        A Naive Algorithm 
+        Calculation of protein isoelectric point using bisection 
+        More speed improvements ... 
+
+
+
+
+
+A Naive Algorithm
+- first we count charged amino acids:
+
+
+for ( i = 0; i <= protein.length() - 1; ++i)
+    {
+              if (protein[i] == Asp)
+                 ++AspNumber;
+
+              if (protein[i] == Glu)
+                 ++GluNumber;
+
+              if (protein[i] == Cys)
+                 ++CysNumber;
+
+              if (protein[i] == Tyr)
+                 ++TyrNumber;
+
+              if (protein[i] == His)
+                 ++HisNumber;
+
+              if (protein[i] == Lys)
+                 ++LysNumber;
+
+              if (protein[i] == Arg)
+                 ++ArgNumber;
+    }
+
+
+- and then calculate the equation:
+
+
+    QN1=-1/(1+pow(10,(3.65-pH)));          //C-terminal charge
+    QN2=-AspNumber/(1+pow(10,(3.9-pH)));            //D charge
+    QN3=-GluNumber/(1+pow(10,(4.07-pH)));            //E charge
+    QN4=-CysNumber/(1+pow(10,(8.18-pH)));            //C charge
+    QN5=-TyrNumber/(1+pow(10,(10.46-pH)));        //Y charge
+    QP1=HisNumber/(1+pow(10,(pH-6.04)));            //H charge
+    QP2=1/(1+pow(10,(pH-8.2)));                //NH2charge
+    QP3=LysNumber/(1+pow(10,(pH-10.54)));            //K charge
+    QP4=ArgNumber/(1+pow(10,(pH-12.48)));            //R charge
+
+
+NQ=QN1+QN2+QN3+QN4+QN5+QP1+QP2+QP3+QP4;       
+
+
+
+- isoelectric point is found when NQ is equal to zero. We start from pH = 0, if 
+the result is bigger than 0, we increase pH for example of 0.01 (assumed 
+precision). We are doing this until NQ <= 0.
+
+
+A computer program's source code:
+
+#include <iostream>
+#include <cmath>               
+#include <fstream>                
+#include <string>                    
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+      std::string protein;
+          ifstream aa;
+       aa.open("aa.txt");        //we are getting the data from the file (we 
+assume that we have aa.txt file) 
+       aa>>protein;                //the sequence should be in one letter code 
+(uppercase letters)
+           aa.close();
+         
+ int ProtLength;                       //now we are getting protein length
+   ProtLength = protein.length();
+  
+  
+   char Asp = 'D';
+   char Glu = 'E';
+   char Cys = 'C';
+   char Tyr = 'Y';
+   char His = 'H';
+   char Lys = 'K';
+   char Arg = 'R';
+
+int AspNumber = 0;
+int GluNumber = 0;
+int CysNumber = 0;
+int TyrNumber = 0;
+int HisNumber = 0;
+int LysNumber = 0;
+int ArgNumber = 0;
+
+int i=0;
+
+
+for ( i = 0; i <= protein.length() - 1; ++i)              //  we are looking for 
+charged amino acids
+    {
+              if (protein[i] == Asp)
+                 ++AspNumber;
+
+              if (protein[i] == Glu)
+                 ++GluNumber;
+
+              if (protein[i] == Cys)
+                 ++CysNumber;
+
+              if (protein[i] == Tyr)
+                 ++TyrNumber;
+
+              if (protein[i] == His)
+                 ++HisNumber;
+
+              if (protein[i] == Lys)
+                 ++LysNumber;
+
+              if (protein[i] == Arg)
+                 ++ArgNumber;
+    }
+
+    
+    double NQ = 0.0; //net charge in given pH
+     
+    double QN1=0;  //C-terminal charge
+    double QN2=0;  //D charge
+    double QN3=0;  //E charge
+    double QN4=0;  //C charge
+    double QN5=0;  //Y charge
+    double QP1=0;  //H charge
+    double QP2=0;  //NH2 charge
+    double QP3=0;  //K charge
+    double QP4=0;  //R charge
+        
+    double pH = 0.0;           
+
+for(;;)                //the infinite loop
+{
+
+// we are using pK values form Wikipedia as they give quite good approximation
+// if you want you can change it
+
+    QN1=-1/(1+pow(10,(3.65-pH)));                                         
+    QN2=-AspNumber/(1+pow(10,(3.9-pH)));           
+    QN3=-GluNumber/(1+pow(10,(4.07-pH)));           
+    QN4=-CysNumber/(1+pow(10,(8.18-pH)));           
+    QN5=-TyrNumber/(1+pow(10,(10.46-pH)));        
+    QP1=HisNumber/(1+pow(10,(pH-6.04)));            
+    QP2=1/(1+pow(10,(pH-8.2)));                
+    QP3=LysNumber/(1+pow(10,(pH-10.54)));           
+    QP4=ArgNumber/(1+pow(10,(pH-12.48)));            
+
+    NQ=QN1+QN2+QN3+QN4+QN5+QP1+QP2+QP3+QP4;
+
+  //if you want to see how the program works step by step uncomment below line
+  //      cout<<"NQ="<<NQ<<"\tat pH ="<<pH<<"\ti:" <<i++<<endl;       
+       
+
+if (pH>=14.0)
+   {                                                 //you should never see this 
+message
+  cout<<"Something is wrong - pH is higher than 14"<<endl;  //
+   break;                                            
+   }                                                 
+
+if (NQ<=0)                            // if this condition is true we can stop 
+calculate
+    break;
+
+ pH+=0.01;                            // if not increase pH
+
+ }
+ 
+ ofstream outfile;                //we are writing results to outfile.txt
+ outfile.open("outfile.txt");           
+   outfile << "Protein length: "<<ProtLength<<endl;
+   outfile << "Number of Asp = "<<AspNumber<<endl;   
+   outfile << "Number of Glu = "<<GluNumber<<endl; 
+   outfile << "Number of Cys = "<<CysNumber<<endl; 
+   outfile << "Number of Tyr = "<<TyrNumber<<endl; 
+   outfile << "Number of His = "<<HisNumber<<endl;
+   outfile << "Number of Lys = "<<LysNumber<<endl; 
+   outfile << "Number of Arg = "<<ArgNumber<<endl;
+   outfile << "Protein isoelectric point: "<<pH<<endl;
+ outfile.close();
+   cout << "Protein isoelectric point: "<<pH<<endl;
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}
+
+      Here you can get compiled source ready to use
+
+
+      Download: isoelectric_point.exe
+
+top 
+Calculation of protein isoelectric point using bisection
+As one can easily see the equation is calculated many times (about 650 times 
+based on average isoelectric point of all proteins with  precision of 0.01). Due 
+this a naive algorithm consumes lots of time. If we calculate isoelectric point 
+only once it is of no importance, but in other cases such an approach to an 
+issue is inefficient. To speed up the calculation of isoelectric point we will 
+use method so-called bisection.
+
+Bisection method is a scientific term of one of  the most conceptually simple 
+and  simultaneously very effective technique to do problematic or complicated 
+equations.
+
+The way the bisection works will be explained on isoelectric point calculation 
+example:
+1) imagine the space of  potential  solutions as a line with defined length (in 
+our case its length is 14),
+2) next split this section to a half and calculate the main equation in the 
+middle point. If NQ>0, the answer must be on the left part of the line 
+(isoelectric point is less than pH of the middle point). If NQ<0, the answer is 
+on the right part of the line,
+3) repeat step 2 until NQ=0 or NQ will be sufficiently close to 0.
+
+Presented approach to isoelectric point calculation can be found in other 
+sources too. For example, a Mr Tabb already proposed it in 2001, but it looks 
+like he did not know that "his" algorithm is a quite common and is widely used. 
+Nevertheless, his article is worthy of recommendation as a superb source of the 
+theoretical basis in isolectric point calculation (I write theoretical because 
+you do not find there anything more than theory).  
+
+Tabb DL (2001) An algorithm for isoelectric point estimation.
+
+In our case the implementation of bisection method in C++ language can look more 
+or less like this:
+#include <iostream>
+#include <cmath>                
+#include <fstream>             
+#include <string>                 
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+      std::string protein;
+          ifstream aa;
+       aa.open("aa.txt");        //we are getting the data from the file (we 
+assume that we have aa.txt file)
+       aa>>protein;                //the sequence should be in one letter code 
+(uppercase letters)
+           aa.close();
+       
+   int ProtLength;                       //now we are getting protein length
+   ProtLength = protein.length();
+ 
+ 
+   char Asp = 'D';
+   char Glu = 'E';
+   char Cys = 'C';
+   char Tyr = 'Y';
+   char His = 'H';
+   char Lys = 'K';
+   char Arg = 'R';
+
+int AspNumber = 0;
+int GluNumber = 0;
+int CysNumber = 0;
+int TyrNumber = 0;
+int HisNumber = 0;
+int LysNumber = 0;
+int ArgNumber = 0;
+
+int i = 0;
+
+
+
+for ( i = 0; i <= protein.length() - 1; ++i)              //  we are looking for 
+charged amino acids
+    {
+              if (protein[i] == Asp)
+                 ++AspNumber;
+
+              if (protein[i] == Glu)
+                 ++GluNumber;
+
+              if (protein[i] == Cys)
+                 ++CysNumber;
+
+              if (protein[i] == Tyr)
+                 ++TyrNumber;
+
+              if (protein[i] == His)
+                 ++HisNumber;
+
+              if (protein[i] == Lys)
+                 ++LysNumber;
+
+              if (protein[i] == Arg)
+                 ++ArgNumber;
+    }
+  
+    double NQ = 0.0; //net charge in given pH
+    
+    double QN1=0;  //C-terminal charge
+    double QN2=0;  //D charge
+    double QN3=0;  //E charge
+    double QN4=0;  //C charge
+    double QN5=0;  //Y charge
+    double QP1=0;  //H charge
+    double QP2=0;  //NH2 charge
+    double QP3=0;  //K charge
+    double QP4=0;  //R charge
+   
+    double pH = 6.5;             //starting point pI = 6.5 - theoretically it 
+should be 7, but
+                                           //average protein pI is 6.5 so we 
+increase the probability
+    double pHprev = 0.0;         //of finding the solution
+    double pHnext = 14.0;        //0-14 is possible pH range
+    double X = 0.0;
+    double E = 0.01;             //epsilon means precision [pI = pH ± E]
+    double temp = 0.0;
+
+cout<<endl<<endl;
+
+for(;;)                //the infinite loop
+{
+
+// we are using pK values form Wikipedia as they give quite good approximation
+// if you want you can change it
+
+    QN1=-1/(1+pow(10,(3.65-pH)));                                        
+    QN2=-AspNumber/(1+pow(10,(3.9-pH)));           
+    QN3=-GluNumber/(1+pow(10,(4.07-pH)));           
+    QN4=-CysNumber/(1+pow(10,(8.18-pH)));           
+    QN5=-TyrNumber/(1+pow(10,(10.46-pH)));        
+    QP1=HisNumber/(1+pow(10,(pH-6.04)));            
+    QP2=1/(1+pow(10,(pH-8.2)));                
+    QP3=LysNumber/(1+pow(10,(pH-10.54)));           
+    QP4=ArgNumber/(1+pow(10,(pH-12.48)));            
+
+    NQ=QN1+QN2+QN3+QN4+QN5+QP1+QP2+QP3+QP4;
+      
+
+if (pH>=14.0)
+   {                                                 //you should never see this 
+message
+  cout<<"Something is wrong - pH is higher than 14"<<endl;  //
+   break;                                            
+   }     
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%   BISECTION   %%%%%%%%%%%%%%%%%%%%%%%%
+
+    if(NQ<0)              //we are out of range, thus the new pH value must be 
+smaller    
+     {                   
+        temp = pH;
+        pH = pH-((pH-pHprev)/2);
+        pHnext = temp;
+        cout<<"pH: "<<pH<<", \tpHnext: "<<pHnext<<endl;
+    }
+    else                  //we used to small pH value, so we have to increase it
+    {                     
+        temp = pH;
+        pH = pH + ((pHnext-pH)/2);
+        pHprev = temp;
+        cout<<"pH: "<<pH<<",\tpHprev: "<<pHprev<<endl;
+ 
+    }
+
+       if ((pH-pHprev<E)&&(pHnext-pH<E)) //terminal condition, finding 
+isoelectric point with given precision
+          break;
+   
+//conclusions: due the usage of bisection method we could shorten the 
+calculation to 10-12 iterations!!!
+
+ }
+ 
+ ofstream outfile;                //we are writting results to outfile.txt
+ outfile.open("outfile.txt");          
+   outfile << "Protein length: "<<ProtLength<<endl;
+   outfile << "Number of Asp = "<<AspNumber<<endl;  
+   outfile << "Number of Glu = "<<GluNumber<<endl;
+   outfile << "Number of Cys = "<<CysNumber<<endl;
+   outfile << "Number of Tyr = "<<TyrNumber<<endl;
+   outfile << "Number of His = "<<HisNumber<<endl;
+   outfile << "Number of Lys = "<<LysNumber<<endl;
+   outfile << "Number of Arg = "<<ArgNumber<<endl;
+   outfile << "Protein isoelectric point: "<<pH<<endl;
+ outfile.close();
+   cout <<endl<< "Protein isoelectric point: "<<pH<<endl<<endl;
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}
+
+
+Ask your self, whether it was worth once’s while to go for such troubles. As you 
+can see, now the main equation is calculated by the program only about ten times 
+(instead of average 650 times). 
+      Here you can get compiled source ready to use
+
+
+      Download: pI_bisection.exe
+
+top 
+More speed improvements ...
+Although, in theory we can improve our program due the imposing more optimal 
+conditions during the middle point determination, it will not make better too 
+much as the verification of more and more conditions will consume our saved 
+time. 
+There is at least one more way to increase the program's speed  (about tenfold). 
+ Such a change will be like " hitting the nail on the head" and none of 
+sophisticated algorithms can do this. So how can one achieve this?
+
+This is quite easy, the only thing we have to do is to look at the problem from 
+different side.
+
+Look again at the equation. It is quite complicated,  we are multiplying, 
+dividing or even worse we are calculating powers (the exponent is negative 
+floating-point number). This is everything what the computer hates. But wait a 
+moment, are every operations necessary. If we satisfy by defined precision (e.g. 
+0.01) we can easily notice that there is finite number of possible partial 
+solutions of the denominator of  the main equation (here it is 1400 x 9 matrix). 
+If we calculate denominators for each buffer pH for pH (with assumed precision) 
+and put them into an array we can get rid of power calculation (the preparation 
+of this array is not a hard thing, the reader can write simple program, which 
+will collect partial solutions - treat it like training in programming). Now, 
+the only thing that we will have to do is dividing the number of particular 
+amino acid by appropriate value from the array. Moreover, C and N terminus 
+charges are a constant in defined pH, so in this two cases we can calculate them 
+once and for all. 
+At first sight limiting to 0.01 precision seems to be not a good idea, because 
+doing this we take away an accuracy of the algorithm. But on the other hand,  
+there is no need to calculate isoelectric point with greater precision as the 
+outcome will be encumbered with errors mentioned earlier. That is why more 
+critical will be to employ values of pKas (which were used by us) than 
+calculating denominator with extraordinary precision.
+
+      Here you can get the program with source code ready to use
+
+
+      Download: pI_optimal.exe
+
+
+top 
