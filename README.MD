@@ -1,7 +1,7 @@
-[sequence-features v1.0](Web site)
+[sequence-features](Web site)
 ======
 
-A [Java Library] for computing physic-chemical properties from amino acid sequence such as retention time and isoelectric point. For computing the isoelectric point of peptides and proteins, it is include some isoelectric point prediction methods such as Bjellvsquit, Iterative, Cofactor and pI-SVM. Each method have available different settings options (i.e. pK sets or factors correction) where required.
+A Java Library for computing physic-chemical properties from amino acid sequence such as retention time and isoelectric point. For computing the isoelectric point of peptides and proteins, it is include some isoelectric point prediction methods such as Bjellvsquit, Iterative, Cofactor and pI-SVM. Each method have available different settings options (i.e. pK sets or factors correction) where required.
 
 
 ### How to use
@@ -10,13 +10,16 @@ The current version have available several test methods that shows the way to co
 
 ### Example
 
-//Computing isoelectric point with Iterative method (pKset = "SILLERO")
+         //Computing isoelectric point with Iterative method (pKset = "SILLERO")
 
-List<AminoAcid> sequence = new ArrayList<AminoAcid>();
+         List<AminoAcid> sequence = new ArrayList<AminoAcid>();
+         
          String temp = "EYQLNDSASYYLNDLDR";
+         
          for(Character character: temp.toCharArray()) sequence.add(AminoAcid.getAminoAcid(character));
 
          IterativepI calculator = IterativepI.getInstance(IterativepI.SILLERO_PKMETHOD, 7.0);
+         
          Double sequencesPI = calculator.computePI(sequence);
 
          assertTrue("Isoelectric Point equal to ", sequencesPI == 3.5011146068573);
