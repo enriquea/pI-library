@@ -4,6 +4,7 @@
     <mapping directory="" vcs="" />
     <mapping directory="$PROJECT_DIR$/../ms-data-core-api/trunk" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/../pride-utilities-svn/trunk" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>
 

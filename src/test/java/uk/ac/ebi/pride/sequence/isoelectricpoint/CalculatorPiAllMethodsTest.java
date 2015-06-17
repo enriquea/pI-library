@@ -90,8 +90,8 @@ public class CalculatorPiAllMethodsTest {
                 calculator_iterative.setPKIterative(IterativepI.GRIMSLEY_PKMETHOD);
                 Double pI_gri = calculator_iterative.computePI(sequence);
 
-                calculator_iterative.setPKIterative(IterativepI.RICHARD_PKMETHOD);
-                Double pI_rich = calculator_iterative.computePI(sequence);
+                calculator_iterative.setPKIterative(IterativepI.DTASelect_PKMETHOD);
+                Double pI_dta = calculator_iterative.computePI(sequence);
 
                 calculator_iterative.setPKIterative(IterativepI.RODWELL_PKMETHOD);
                 Double pI_rodw = calculator_iterative.computePI(sequence);
@@ -124,7 +124,7 @@ public class CalculatorPiAllMethodsTest {
                 //printing all pI computed
                 System.out.println(seq + "\t" + pIexperimental + "\t" + df.format(pI_sill) + "\t" + df.format(pI_pat) +
                                   "\t" + df.format(pI_leh) + "\t" + df.format(pI_emb) + "\t" + df.format(pI_gri) +
-                                  "\t" + df.format(pI_rich) + "\t" + df.format(pI_rodw) + "\t" + df.format(pI_sol) +
+                                  "\t" + df.format(pI_dta) + "\t" + df.format(pI_rodw) + "\t" + df.format(pI_sol) +
                                   "\t" + df.format(pI_thu) + "\t" + df.format(pI_tos) + "\t" + df.format(pI_bjell_default) +
                                   "\t" + df.format(pI_bjell_skood) + "\t" + df.format(pI_bjell_expasy) + "\t" + df.format(pI_bjell_calib)+
                                   "\t" + df.format(pI_svm) + "\t" + df.format(pI_cofactor));
@@ -224,7 +224,7 @@ public class CalculatorPiAllMethodsTest {
             calculator_iterative.setPKIterative(IterativepI.GRIMSLEY_PKMETHOD);
             Double pI_gri = calculator_iterative.computePI(sequence);
 
-            calculator_iterative.setPKIterative(IterativepI.RICHARD_PKMETHOD);
+            calculator_iterative.setPKIterative(IterativepI.DTASelect_PKMETHOD);
             Double pI_rich = calculator_iterative.computePI(sequence);
 
             calculator_iterative.setPKIterative(IterativepI.RODWELL_PKMETHOD);

@@ -2,7 +2,6 @@ package uk.ac.ebi.pride.sequence.isoelectricpoint.iterativepI;
 
 import uk.ac.ebi.pride.mol.AminoAcid;
 import uk.ac.ebi.pride.sequence.isoelectricpoint.IsoelectricPointMethod;
-import uk.ac.ebi.pride.sequence.isoelectricpoint.bjellpI.BjellpI;
 
 import java.util.*;
 
@@ -20,6 +19,8 @@ import java.util.*;
  *   - THURLKILL:
  *   - TOSELAND:
  *   - GRIMSLEY:
+ *   - N&T:
+ *   - DTASelect:
  *
  * @author yperez, enrique
  */
@@ -35,7 +36,7 @@ public class IterativepI implements IsoelectricPointMethod {
 
     public static String PATRICKIOS_PKMETHOD = "PATRICKIOS";
 
-    public static String RICHARD_PKMETHOD    = "RICHARD";
+   // public static String RICHARD_PKMETHOD    = "RICHARD";
 
     public static String LEHNINGER_PKMETHOD  = "LEHNINGER";
 
@@ -44,6 +45,10 @@ public class IterativepI implements IsoelectricPointMethod {
     public static String TOSELAND_PKMETHOD  = "TOSELAND";
 
     public static String THURLKILL_PKMETHOD  = "THURLKILL";
+
+    public static String NOZAKI_TANFORD_PKMETHOD = "NOZAKI_TANFORD";
+
+    public static String DTASelect_PKMETHOD = "DTASelect";
 
     private static String defaultPK = EMBOSS_PKMETHOD;     // select the pk set to compute the pI
 
@@ -187,7 +192,7 @@ public class IterativepI implements IsoelectricPointMethod {
             pKIterative.put(AminoAcid.H, Double.valueOf(0.0D));
             pKIterative.put(AminoAcid.C, Double.valueOf(0.0D));
             pKIterative.put(AminoAcid.Y, Double.valueOf(0.0D));
-        }else if(defaultPK == RICHARD_PKMETHOD){
+ /*       }else if(defaultPK == RICHARD_PKMETHOD){
             CTerm_Pk = Double.valueOf(3.20D);
             NTerm_Pk = Double.valueOf(8.20D);
             pKIterative.put(AminoAcid.D, Double.valueOf(4.0D));
@@ -196,7 +201,7 @@ public class IterativepI implements IsoelectricPointMethod {
             pKIterative.put(AminoAcid.R, Double.valueOf(12.00D));
             pKIterative.put(AminoAcid.H, Double.valueOf(6.4D));
             pKIterative.put(AminoAcid.C, Double.valueOf(9.0D));
-            pKIterative.put(AminoAcid.Y, Double.valueOf(10.0D));
+            pKIterative.put(AminoAcid.Y, Double.valueOf(10.0D));*/
         }else if(defaultPK == LEHNINGER_PKMETHOD){
             CTerm_Pk = Double.valueOf(2.34D);
             NTerm_Pk = Double.valueOf(9.69D);
@@ -237,8 +242,28 @@ public class IterativepI implements IsoelectricPointMethod {
             pKIterative.put(AminoAcid.H, Double.valueOf(6.54D));
             pKIterative.put(AminoAcid.C, Double.valueOf(8.55D));
             pKIterative.put(AminoAcid.Y, Double.valueOf(9.84D));
+        }else if(defaultPK == NOZAKI_TANFORD_PKMETHOD){
+            CTerm_Pk = Double.valueOf(3.67D);
+            NTerm_Pk = Double.valueOf(7.50D);
+            pKIterative.put(AminoAcid.D, Double.valueOf(4.00D));
+            pKIterative.put(AminoAcid.E, Double.valueOf(4.25D));
+            pKIterative.put(AminoAcid.K, Double.valueOf(10.40D));
+            pKIterative.put(AminoAcid.R, Double.valueOf(12.0D));
+            pKIterative.put(AminoAcid.H, Double.valueOf(6.30D));
+            pKIterative.put(AminoAcid.C, Double.valueOf(9.50D));
+            pKIterative.put(AminoAcid.Y, Double.valueOf(9.60D));
+        }else if(defaultPK == DTASelect_PKMETHOD){
+            CTerm_Pk = Double.valueOf(3.1D);
+            NTerm_Pk = Double.valueOf(8.0D);
+            pKIterative.put(AminoAcid.D, Double.valueOf(4.0D));
+            pKIterative.put(AminoAcid.E, Double.valueOf(4.0D));
+            pKIterative.put(AminoAcid.K, Double.valueOf(10.0D));
+            pKIterative.put(AminoAcid.R, Double.valueOf(12.0D));
+            pKIterative.put(AminoAcid.H, Double.valueOf(6.5D));
+            pKIterative.put(AminoAcid.C, Double.valueOf(8.50D));
+            pKIterative.put(AminoAcid.Y, Double.valueOf(10.0D));
         }else{
-            CTerm_Pk = Double.valueOf(3.60D);
+            CTerm_Pk = Double.valueOf(3.60D);   //Default: EMBOSS
             NTerm_Pk = Double.valueOf(8.60D);
             pKIterative.put(AminoAcid.D, Double.valueOf(3.90D));
             pKIterative.put(AminoAcid.E, Double.valueOf(4.10D));
