@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="84854ced-8ef2-43a7-a94f-c13a390e2dde" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CalculatorPiAllMethodsTest.java" afterPath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CalculatorPiAllMethodsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/iterativepI/IterativepI.java" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/iterativepI/IterativepI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/DispersionGraph.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/DistributionGraph.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/FractionGraph.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/Message.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/OutlierGraph.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ParseAllFormat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/SequenceFormat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/SequenceVerifier.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ValidatorFormattedTextField.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ValueFormat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ValueVerifier.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/WebPageManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/utils/SequenceUtils.java" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/utils/SequenceUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sequence-features.iml" afterPath="$PROJECT_DIR$/sequence-features.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pride-features.iws" />
@@ -21,7 +32,7 @@
     <file path="/SequenceConverterTest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434002878571" ignored="false" />
     <file path="/SequenceTest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1384210217678" ignored="false" />
     <file path="/ModificationTest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434002855683" ignored="false" />
-    <file path="/Dummy.txt" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434555202237" ignored="false" />
+    <file path="/Dummy.txt" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1435958846460" ignored="false" />
     <file path="/AminoAcidTerminal.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1384201554902" ignored="false" />
     <file path="$USER_HOME$/IdeaProjects/ProofConceptJava/src/SingletonClass.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1384374930240" ignored="false" />
     <file path="/SingletonClass.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1384370939921" ignored="false" />
@@ -37,7 +48,7 @@
     <file path="/CofactorSixWindowAA.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434003848896" ignored="false" />
     <file path="/CofactorSixWindowAATest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1387557287782" ignored="false" />
     <file path="/ConstantsPk.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1386625153280" ignored="false" />
-    <file path="/IterativepITest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434348899349" ignored="false" />
+    <file path="/IterativepITest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434669749889" ignored="false" />
     <file path="$USER_HOME$/IdeaProjects/ParserPIDB/src/ParserPiDataBase.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1432600248186" ignored="false" />
     <file path="/ParserPiDataBase.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1432600237036" ignored="false" />
     <file path="$USER_HOME$/IdeaProjects/ParserPIDB/src/Protein.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1414971341311" ignored="false" />
@@ -87,6 +98,9 @@
     <file path="/RetentionTimeFeatureTest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434336307199" ignored="false" />
     <file path="/CalculatorPiAllMethodsTest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434557799888" ignored="false" />
     <file path="/BjellpI.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434357091613" ignored="false" />
+    <file path="/Message.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1435959348353" ignored="false" />
+    <file path="/WebPageManager.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1435959688740" ignored="false" />
+    <file path="/ValueVerifier.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1435959764802" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,8 +120,8 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -144,7 +158,7 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -155,98 +169,100 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IterativepITest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/IterativepITest.java">
+      <file leaf-file-name="Message.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="215" column="8" selection-start="7264" selection-end="7264" vertical-scroll-proportion="0.0">
+            <state line="12" column="24" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalculatorPiAllMethodsTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CalculatorPiAllMethodsTest.java">
+      <file leaf-file-name="ParseAllFormat.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ParseAllFormat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="66" selection-start="5635" selection-end="5635" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PIPDB.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/PIPDB.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="2" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SvmpITest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/SvmpITest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="6" selection-start="5623" selection-end="5623" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BjellpITest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/BjellpITest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="173" column="76" selection-start="5742" selection-end="5811" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BjellpI.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/bjellpI/BjellpI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="406" column="0" selection-start="19100" selection-end="19100" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProteinPIDB.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/ProteinPIDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="56" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SvmpI.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/SvmpI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="210" column="0" selection-start="8460" selection-end="8460" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CofactorAdjacentpITest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CofactorAdjacentpITest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="64" selection-start="5706" selection-end="5758" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IterativepI.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/iterativepI/IterativepI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="17" selection-start="465" selection-end="465" vertical-scroll-proportion="0.5425532">
+            <state line="18" column="13" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2798#2809#0" expanded="true" />
-                <element signature="e#2992#3003#0" expanded="true" />
-                <element signature="e#12386#12397#0" expanded="true" />
-                <element signature="e#12580#12591#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SequenceFormat.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/SequenceFormat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="14" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SequenceVerifier.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/SequenceVerifier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="19" selection-start="841" selection-end="841" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SequenceUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/utils/SequenceUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="0" selection-start="2471" selection-end="2471" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValidatorFormattedTextField.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ValidatorFormattedTextField.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="13" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DispersionGraph.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/DispersionGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="13" selection-start="442" selection-end="442" vertical-scroll-proportion="0.5862069">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DistributionGraph.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/DistributionGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="13" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FractionGraph.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/FractionGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="13" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OutlierGraph.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/OutlierGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="13" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -269,22 +285,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/BuildPIDataSet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/SvmPiDescriptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/SvmpI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/utils/svm/SvmClassifier.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/retentiontime/RetentionTimeFeatureTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/utils/PatternModification.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/cofactorAdjacentpI/CofactorSixWindowAA.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/BjellpITest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CofactorAdjacentpITest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/SvmpITest.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/bjellpI/BjellpI.java" />
         <option value="$PROJECT_DIR$/src/test/resources/PIPDB.txt" />
         <option value="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/ProteinPIDB.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/IterativepITest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CalculatorPiAllMethodsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/iterativepI/IterativepI.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/IterativepITest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/ParseAllFormat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/WebPageManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/ValueVerifier.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/utils/SequenceUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/SequenceVerifier.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ValidatorFormattedTextField.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/DispersionGraph.java" />
       </list>
     </option>
   </component>
@@ -308,9 +324,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="3" />
-    <option name="width" value="1134" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -400,67 +416,47 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/local_java_repository/xchart-2.4.3.jar!/" />
     <property name="project.structure.side.proportion" value="0.2746234" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="FORWARD_ANALIZER" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FORWARD_ANALIZER" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="uk.ac.ebi.pride.sequence.isoelectricpoint.cofactorAdjacentpI" />
       <recent name="uk.ac.ebi.pride.sequence.utils" />
       <recent name="uk.ac.ebi.pride.isoelectricpoint" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="uk.ac.ebi.pride.sequence.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Enrique\Desktop\sequence-features\src\main\java\uk\ac\ebi\pride\sequence\gui\graphs" />
+      <recent name="C:\Users\Enrique\Desktop\sequence-features\src\main\java\uk\ac\ebi\pride\sequence\gui" />
       <recent name="E:\TRABAJO\Proyectos\Java\IdeaProjects\pride-features\src\test\resources" />
       <recent name="G:\IdeaProjects\pride-features\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Enrique\Desktop\sequence-features\src\main\java\uk\ac\ebi\pride\sequence\gui" />
+      <recent name="F:\IdeaProjects\pride-features" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="uk.ac.ebi.pride.sequence.isoelectricpoint" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\IdeaProjects\pride-features" />
-    </key>
   </component>
-  <component name="RunManager" selected="JUnit.CalculatorPiAllMethodsTest.testComputePiAllMethodsFromPIPDB">
-    <configuration default="false" name="IterativepITest.testComputePIGroup" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="sequence-features" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="uk.ac.ebi.pride.sequence.isoelectricpoint" />
-      <option name="MAIN_CLASS_NAME" value="uk.ac.ebi.pride.sequence.isoelectricpoint.IterativepITest" />
-      <option name="METHOD_NAME" value="testComputePIGroup" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.IterativepITest.testComputePiFromPIPDB">
     <configuration default="false" name="IterativepITest.testComputePIGroupAllMethods" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="sequence-features" />
@@ -553,6 +549,29 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="IterativepITest.testComputePiFromPIPDB" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="sequence-features" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="uk.ac.ebi.pride.sequence.isoelectricpoint" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.ebi.pride.sequence.isoelectricpoint.IterativepITest" />
+      <option name="METHOD_NAME" value="testComputePiFromPIPDB" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -589,19 +608,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -628,6 +634,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -692,19 +711,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All in pride-features" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.IterativepITest.testComputePIGroup" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.IterativepITest.testComputePIGroupAllMethods" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePIGroupAllMethods" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePiFullFromPIPDB" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePiAllMethodsFromPIPDB" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.IterativepITest.testComputePIGroupAllMethods" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePIGroupAllMethods" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePiFullFromPIPDB" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePiAllMethodsFromPIPDB" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.IterativepITest.testComputePiFromPIPDB" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePiAllMethodsFromPIPDB" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePiFullFromPIPDB" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePIGroupAllMethods" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.IterativepITest.testComputePIGroupAllMethods" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.IterativepITest.testComputePIGroup" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.IterativepITest.testComputePiFromPIPDB" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePiAllMethodsFromPIPDB" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePiFullFromPIPDB" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorPiAllMethodsTest.testComputePIGroupAllMethods" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.IterativepITest.testComputePIGroupAllMethods" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -761,7 +780,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="3" width="1134" height="744" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -776,16 +795,16 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23338735" sideWeight="0.23424879" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.011345219" sideWeight="0.5541195" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951378" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18157424" sideWeight="0.797054" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.84288055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29721814" sideWeight="0.18330605" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.81669396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="97" y="4" width="1088" height="802" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.6500593" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven-2 Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven-2 Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31914893" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -875,93 +894,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/utils/PatternModification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="85" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/cofactorAdjacentpI/CofactorSixWindowAA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="16" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/BuildPIDataSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/SvmPiDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/aaindex/AaIndexTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="355" selection-end="355" vertical-scroll-proportion="-0.92907804" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/cofactorAdjacentpI/CofactorAdjacentpI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="37" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/PIPDB.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="2" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/bjellpI/BjellpI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="406" column="0" selection-start="19100" selection-end="19100" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/SvmpI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="0" selection-start="8460" selection-end="8460" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CofactorAdjacentpITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="64" selection-start="5706" selection-end="5758" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/ProteinPIDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="56" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/SvmpITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="6" selection-start="5623" selection-end="5623" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/BjellpITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="76" selection-start="5742" selection-end="5811" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/IterativepITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="8" selection-start="7264" selection-end="7264" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="20" column="0" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -974,13 +912,106 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/iterativepI/IterativepI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="465" selection-end="465" vertical-scroll-proportion="0.5425532">
+        <state line="237" column="49" selection-start="9623" selection-end="9623" vertical-scroll-proportion="0.02905983">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ValueFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/WebPageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="36" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ValueVerifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/utils/SequenceUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="0" selection-start="2471" selection-end="2471" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="24" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ParseAllFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2798#2809#0" expanded="true" />
-            <element signature="e#2992#3003#0" expanded="true" />
-            <element signature="e#12386#12397#0" expanded="true" />
-            <element signature="e#12580#12591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/SequenceFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="14" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/SequenceVerifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="19" selection-start="841" selection-end="841" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/utils/ValidatorFormattedTextField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="13" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/OutlierGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/FractionGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/DistributionGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/gui/graphs/DispersionGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="442" selection-end="442" vertical-scroll-proportion="0.5862069">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1072,7 +1103,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>batik-awt-util-1.6-1</last-edited>
+          <last-edited>xchart-2.4.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

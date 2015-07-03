@@ -55,4 +55,24 @@ public class SequenceUtils {
         return str_sequence.toString();
     }
 
+
+
+    /*
+   * This method returns true if the input String is valid like AminoAcid sequence.
+   * Otherwise return false.
+   */
+    public static boolean validateSequence(String sequence) {
+        for(Character character: sequence.toCharArray()){
+            if( AminoAcid.getAminoAcid(character)!= null && sequence.length()!=0){
+                continue;
+            }
+            else{
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
 }

@@ -19,6 +19,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.4" level="project" />
     <orderEntry type="library" name="Maven: uk.ac.ebi.pride-mod:pride-mod:1.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" name="xchart-2.4.3" level="project" />
   </component>
   <component name="POM File Configuration" pomFile="" />
 </module>
