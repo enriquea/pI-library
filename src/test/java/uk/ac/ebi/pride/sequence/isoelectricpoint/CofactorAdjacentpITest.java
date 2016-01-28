@@ -4,8 +4,8 @@ package uk.ac.ebi.pride.sequence.isoelectricpoint;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import uk.ac.ebi.pride.mol.AminoAcid;
 import uk.ac.ebi.pride.sequence.isoelectricpoint.cofactorAdjacentpI.CofactorAdjacentpI;
+import uk.ac.ebi.pride.sequence.utils.AminoAcid;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -43,12 +43,13 @@ import static org.junit.Assert.assertTrue;
 
         List<AminoAcid> sequence = new ArrayList<AminoAcid>();
         String temp = "EYQLNDSASYYLNDLDR";
-        for(Character character: temp.toCharArray()) sequence.add(AminoAcid.getAminoAcid(character));
+        for(Character character: temp.toCharArray()) sequence.add(AminoAcid.getMolecule(character));
 
         List<List<AminoAcid>> sequences = new ArrayList<List<AminoAcid>>();
         sequences.add(sequence);
 
         Double sequencesPI = calculator.computePI(sequence);
+        System.out.println(sequencesPI);
 
         assertTrue("Isoelectric Point equal to ", sequencesPI == 3.7196044921875);
     }
@@ -86,7 +87,7 @@ import static org.junit.Assert.assertTrue;
                     if(character.equals('X')){
                         continue;
                     }
-                    sequence.add(AminoAcid.getAminoAcid(character));
+                    sequence.add(AminoAcid.getMolecule(character));
                 }
 
                 Double sequencesPI = calculator.computePI(sequence);
@@ -160,7 +161,7 @@ import static org.junit.Assert.assertTrue;
                 if(character.equals('X')){
                     continue;     //Avoiding not valid character in sequence
                 }
-                sequence.add(AminoAcid.getAminoAcid(character));   //Building Amino Acid sequence
+                sequence.add(AminoAcid.getMolecule(character));   //Building Amino Acid sequence
             }
 
             List<List<AminoAcid>> sequences = new ArrayList<List<AminoAcid>>();

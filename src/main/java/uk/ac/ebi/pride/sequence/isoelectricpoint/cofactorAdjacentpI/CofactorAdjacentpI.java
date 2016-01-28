@@ -1,8 +1,7 @@
 
 package uk.ac.ebi.pride.sequence.isoelectricpoint.cofactorAdjacentpI;
 
-import uk.ac.ebi.pride.mol.AminoAcid;
-import uk.ac.ebi.pride.sequence.isoelectricpoint.IsoelectricPointMethod;
+import uk.ac.ebi.pride.sequence.utils.AminoAcid;
 import uk.ac.ebi.pride.sequence.utils.Constants;
 
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.Map;
  *
  * @author yperez
  */
-public class CofactorAdjacentpI implements IsoelectricPointMethod {
+public class CofactorAdjacentpI {
 
     static double pIAdjust_H = 4.468244;
 
@@ -52,41 +51,64 @@ public class CofactorAdjacentpI implements IsoelectricPointMethod {
         pIAdjust_Cterminus = Constants.pICofactorAdjust_Cterm;
     }
 
-    @Override
+    //@Override
     public Double computePI(List<AminoAcid> sequence){
 
         double OldPI = 10.0;
         double HiPI = 14.0;
         double LowPI = 0.0;
         double C_PI = 7.0;
-        double PItemp = 0;
+        double PItemp;
 
         while (Math.abs(C_PI - OldPI) > .001){
 
             PItemp = 0;
-            for (int i = 0; i < sequence.size(); i++)
+
+            //First, to compute all phosphorylation contributions
+            for (int i = 0; i < sequence.size(); i++) {
+                if(sequence.get(i).equals(AminoAcid.p)){
+                    double STpKa1 = 1.2D;        // pk values for phospho-amino (from ProMoST tool)
+                    double STpKa2 = 6.5D;
+                    C_PI += -1.0D / (1.0D + Math.pow(10.0D, STpKa1 - 6.5D));
+                    C_PI += -1.0D / (1.0D + Math.pow(10.0D, STpKa2 - 6.5D));
+                }
+            }
+
+            //To eliminate modifications markers from sequence to avoid incorrect indexing...
+            //It is mandatory to compute correctly the pI via Cofactor algorithm (at least in the current version)
+            //This solution could be improved.
+            for (int i = 0; i < sequence.size(); i++) {
+                if(sequence.get(i).equals(AminoAcid.n) || sequence.get(i).equals(AminoAcid.m) || sequence.get(i).equals(AminoAcid.o) || sequence.get(i).equals(AminoAcid.p)){
+                    sequence.remove(i);
+                }
+            }
+
+            for (int i = 0; i < sequence.size(); i++) {
                 PItemp += GetPIValuesForAABjellvist(sequence.get(i).getOneLetterCode(), C_PI, i, sequence.size() - 1,sequence);
 
-            PItemp += GetPIValuesForTermBjellvist(sequence.get(sequence.size() - 1).getOneLetterCode(), C_PI, 1,sequence);
-            PItemp += GetPIValuesForTermBjellvist(sequence.get(0).getOneLetterCode(), C_PI,0,sequence);
-            OldPI = C_PI;
-            if (PItemp > 0){
-                C_PI = (C_PI + LowPI) / 2.0;
-                HiPI = OldPI;
-            }else{
-                C_PI = (C_PI + HiPI) / 2.0;
-                LowPI = OldPI;
+                PItemp += GetPIValuesForTermBjellvist(sequence.get(sequence.size() - 1).getOneLetterCode(), C_PI, 1,sequence);
+                PItemp += GetPIValuesForTermBjellvist(sequence.get(0).getOneLetterCode(), C_PI,0,sequence);
+                OldPI = C_PI;
+                if (PItemp > 0){
+                    C_PI = (C_PI + LowPI) / 2.0;
+                    HiPI = OldPI;
+                }else{
+                    C_PI = (C_PI + HiPI) / 2.0;
+                    LowPI = OldPI;
+                }
             }
         }
         return C_PI;
     }
 
-    @Override
+
+
+   // @Override
     public Double computeChargeAtpH(List<AminoAcid> sequence, Double pH) {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    @Override
+   // @Override
     public Map<Double, Double> computeStepMethodPI(List<AminoAcid> sequence) {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }

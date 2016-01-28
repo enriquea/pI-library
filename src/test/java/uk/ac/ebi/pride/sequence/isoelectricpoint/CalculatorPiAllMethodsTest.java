@@ -3,11 +3,11 @@ package uk.ac.ebi.pride.sequence.isoelectricpoint;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import uk.ac.ebi.pride.mol.AminoAcid;
 import uk.ac.ebi.pride.sequence.isoelectricpoint.bjellpI.BjellpI;
 import uk.ac.ebi.pride.sequence.isoelectricpoint.cofactorAdjacentpI.CofactorAdjacentpI;
 import uk.ac.ebi.pride.sequence.isoelectricpoint.iterativepI.IterativepI;
 import uk.ac.ebi.pride.sequence.isoelectricpoint.svmpI.SvmpI;
+import uk.ac.ebi.pride.sequence.utils.AminoAcid;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,8 +15,6 @@ import java.io.FileReader;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.*;
-
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,10 +35,10 @@ public class CalculatorPiAllMethodsTest {
 
 
 
-    /*
-    * This method compute the isoelectric point for proteins from peptides file (Heller dataset).
-    * It use all methods implemented in this library.
-    * */
+   //
+   //This method compute the isoelectric point for proteins from peptides file (Heller dataset).
+   //It use all methods implemented in this library.
+   //
 
     @Test
     public void testComputePIGroupAllMethods() throws Exception {
@@ -49,7 +47,7 @@ public class CalculatorPiAllMethodsTest {
 
         //Computing pI values from sequences file
 
-        URL url = IterativepITest.class.getClassLoader().getResource("HellerDataSet.csv");
+        URL url = IterativepITest.class.getClassLoader().getResource("gauci-acetylated-peptide-data.txt");
         if (url == null) {
             throw new IllegalStateException("no file for input found!");
         }
@@ -59,7 +57,7 @@ public class CalculatorPiAllMethodsTest {
         StringTokenizer token;
         while((tuple = input.readLine())!= null){
 
-            token = new StringTokenizer(tuple, ",");
+            token = new StringTokenizer(tuple, "\t");
             String seq = token.nextToken();
             String pIexperimental = token.nextToken();
 
@@ -70,7 +68,7 @@ public class CalculatorPiAllMethodsTest {
                     if(character.equals('X')){
                         continue;
                     }
-                    sequence.add(AminoAcid.getAminoAcid(character));
+                    sequence.add(AminoAcid.getMolecule(character));
                 }
 
                 //setting pI methods and computing pI
@@ -119,7 +117,7 @@ public class CalculatorPiAllMethodsTest {
 
                 Double pI_svm = calculator_svm.computePI(sequence);
 
-                Double pI_cofactor = calculator_cofactor.computePI(sequence);
+                //Double pI_cofactor = calculator_cofactor.computePI(sequence);
 
                 //printing all pI computed
                 System.out.println(seq + "\t" + pIexperimental + "\t" + df.format(pI_sill) + "\t" + df.format(pI_pat) +
@@ -127,16 +125,16 @@ public class CalculatorPiAllMethodsTest {
                                   "\t" + df.format(pI_dta) + "\t" + df.format(pI_rodw) + "\t" + df.format(pI_sol) +
                                   "\t" + df.format(pI_thu) + "\t" + df.format(pI_tos) + "\t" + df.format(pI_bjell_default) +
                                   "\t" + df.format(pI_bjell_skood) + "\t" + df.format(pI_bjell_expasy) + "\t" + df.format(pI_bjell_calib)+
-                                  "\t" + df.format(pI_svm) + "\t" + df.format(pI_cofactor));
+                                  "\t" + df.format(pI_svm)); // + "\t" + df.format(pI_cofactor));
             }
         }
         input.close();
     }
 
-    /*
-    * This method compute the isoelectric point for proteins from PIPDB.
-    * It use all methods implemented in this library.
-    * */
+    //
+    //This method compute the isoelectric point for proteins from PIPDB.
+    //It use all methods implemented in this library.
+    //
     @Test
     public void testComputePiAllMethodsFromPIPDB() throws Exception {
 
@@ -144,7 +142,7 @@ public class CalculatorPiAllMethodsTest {
 
         //Parsing PIPDB
 
-        URL url = IterativepITest.class.getClassLoader().getResource("PIPDB.txt");
+        URL url = CalculatorPiAllMethodsTest.class.getClassLoader().getResource("PIPDB.txt");
         if (url == null) {
             throw new IllegalStateException("no file for input found!");
         }
@@ -198,7 +196,7 @@ public class CalculatorPiAllMethodsTest {
                 if(character.equals('X')){
                     continue;     //Avoiding not valid character in sequence
                 }
-                sequence.add(AminoAcid.getAminoAcid(character));   //Building Amino Acid sequence
+                sequence.add(AminoAcid.getMolecule(character));   //Building Amino Acid sequence
             }
 
             List<List<AminoAcid>> sequences = new ArrayList<List<AminoAcid>>();
@@ -278,8 +276,8 @@ public class CalculatorPiAllMethodsTest {
         //Initializing Cofactor method
         calculator_cofactor = CofactorAdjacentpI.getInstance();
 
-        //Building and training pI-SVM model...
-        URL url = SvmpITest.class.getClassLoader().getResource("PIPDB.txt");
+        //Building and training pI-SVM model for PIPDB data...
+       /* URL url = SvmpITest.class.getClassLoader().getResource("PIPDB.txt");
         if (url == null) {
             throw new IllegalStateException("no file for input found!");
         }
@@ -328,7 +326,7 @@ public class CalculatorPiAllMethodsTest {
                 if(character.equals('X')){
                     continue;     //Avoiding not valid character in sequence
                 }
-                sequence.add(AminoAcid.getAminoAcid(character));   //Building Amino Acid sequence
+                sequence.add(AminoAcid.getMolecule(character));   //Building Amino Acid sequence
             }
 
             List<List<AminoAcid>> sequences = new ArrayList<List<AminoAcid>>();
@@ -336,6 +334,29 @@ public class CalculatorPiAllMethodsTest {
             mapSequences.put(sequence, Double.parseDouble(protein.getpIexperimental()));
         }
 
+        calculator_svm = SvmpI.getInstance(mapSequences, false);*/
+
+
+        URL url = SvmpITest.class.getClassLoader().getResource("GauciDataNon-modified.csv");
+        if (url == null) {
+            throw new IllegalStateException("no file for input found!");
+        }
+        File inputFile = new File(url.toURI());
+        Scanner scanner = new Scanner(inputFile);
+        mapSequences = new HashMap<List<AminoAcid>, Double>();
+
+        //first use a Scanner to get each line
+        while ( scanner.hasNextLine() ){
+            String stringLine = scanner.nextLine();
+            if (stringLine != null) {
+                stringLine.trim();
+                String[] attr = stringLine.split(",");
+                List<AminoAcid> sequence = new ArrayList<AminoAcid>();
+                for(Character character: attr[0].toCharArray()) sequence.add(AminoAcid.getMolecule(character));
+                mapSequences.put(sequence, Double.parseDouble(attr[1]));
+            }
+
+        }
         calculator_svm = SvmpI.getInstance(mapSequences, false);
     }
 

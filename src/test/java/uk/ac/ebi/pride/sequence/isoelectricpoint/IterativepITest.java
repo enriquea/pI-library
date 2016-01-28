@@ -3,8 +3,8 @@ package uk.ac.ebi.pride.sequence.isoelectricpoint;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import uk.ac.ebi.pride.mol.AminoAcid;
 import uk.ac.ebi.pride.sequence.isoelectricpoint.iterativepI.IterativepI;
+import uk.ac.ebi.pride.sequence.utils.AminoAcid;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -41,15 +41,15 @@ public class IterativepITest {
         // Computing pI value for a single sequence
 
          List<AminoAcid> sequence = new ArrayList<AminoAcid>();
-         String temp = "EYQLNDSASYYLNDLDR";
-         for(Character character: temp.toCharArray()) sequence.add(AminoAcid.getAminoAcid(character));
+         String temp = "MLPHAPGVQoMQAIPEDAVQEDSGDEEDDPDKR";
+         for(Character character: temp.toCharArray()) sequence.add(AminoAcid.getMolecule(character));
 
          List<List<AminoAcid>> sequences = new ArrayList<List<AminoAcid>>();
          sequences.add(sequence);
 
          Double sequencesPI = calculator.computePI(sequence);
 
-         //System.out.println(sequencesPI);
+        System.out.println(sequencesPI);
 
          assertTrue("Isoelectric Point equal to ", sequencesPI == 3.5011146068573);
     }
@@ -66,7 +66,7 @@ public class IterativepITest {
 
         //Computing pI values from sequences file
 
-        URL url = IterativepITest.class.getClassLoader().getResource("HellerDataSet.csv");
+        URL url = IterativepITest.class.getClassLoader().getResource("gauci-pep-acetylated-data.txt");
         if (url == null) {
             throw new IllegalStateException("no file for input found!");
         }
@@ -76,7 +76,7 @@ public class IterativepITest {
         StringTokenizer token;
         while((tuple = input.readLine())!= null){
 
-            token = new StringTokenizer(tuple, ",");
+            token = new StringTokenizer(tuple, "\t");
             String s = token.nextToken();
             String pIexperimental = token.nextToken();
 
@@ -87,7 +87,7 @@ public class IterativepITest {
                     if(character.equals('X')){
                         continue;
                     }
-                    sequence.add(AminoAcid.getAminoAcid(character));
+                    sequence.add(AminoAcid.getMolecule(character));
                 }
 
                 Double sequencesPI = calculator.computePI(sequence);
@@ -125,7 +125,7 @@ public class IterativepITest {
                     if(character.equals('X')){
                         continue;
                     }
-                    sequence.add(AminoAcid.getAminoAcid(character));
+                    sequence.add(AminoAcid.getMolecule(character));
                 }
 
                 Double pI = calculator.computePI(sequence);
@@ -200,7 +200,7 @@ public class IterativepITest {
                 if(character.equals('X')){
                     continue;     //Avoiding not valid character in sequence
                 }
-                sequence.add(AminoAcid.getAminoAcid(character));   //Building Amino Acid sequence
+                sequence.add(AminoAcid.getMolecule(character));   //Building Amino Acid sequence
             }
 
             List<List<AminoAcid>> sequences = new ArrayList<List<AminoAcid>>();
@@ -213,7 +213,7 @@ public class IterativepITest {
 
     @Before
     public void setUp() throws Exception {
-        calculator = IterativepI.getInstance(IterativepI.SILLERO_PKMETHOD, 7.0);
+        calculator = IterativepI.getInstance(IterativepI.GRIMSLEY_PKMETHOD, 7.0);
     }
 
     @After

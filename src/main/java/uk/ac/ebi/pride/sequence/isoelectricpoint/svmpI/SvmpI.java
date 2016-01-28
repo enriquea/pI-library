@@ -1,8 +1,8 @@
 package uk.ac.ebi.pride.sequence.isoelectricpoint.svmpI;
 
-import uk.ac.ebi.pride.mol.AminoAcid;
-import uk.ac.ebi.pride.sequence.isoelectricpoint.IsoelectricPointMethod;
+
 import uk.ac.ebi.pride.sequence.isoelectricpoint.bjellpI.BjellpI;
+import uk.ac.ebi.pride.sequence.utils.AminoAcid;
 import uk.ac.ebi.pride.sequence.utils.svm.NormalizeVector;
 import uk.ac.ebi.pride.sequence.utils.svm.SvmClassifier;
 import uk.ac.ebi.pride.sequence.utils.svm.SvmKernel;
@@ -26,7 +26,7 @@ import java.util.*;
  * Date: 8/5/13
  *
  * */
-public class SvmpI implements IsoelectricPointMethod {
+public class SvmpI {
 
     private static volatile SvmpI instance = null;
 
@@ -34,7 +34,7 @@ public class SvmpI implements IsoelectricPointMethod {
 
     private static double rmseMin          = 14.0;
 
-    private static int countModels         = 15;
+    private static int countModels         = 5;
 
     private static double gamma = 0.5;
 
@@ -98,7 +98,7 @@ public class SvmpI implements IsoelectricPointMethod {
      * @return isoelectric point
      * */
 
-    @Override
+   // @Override
     public Double computePI(List<AminoAcid> sequence) throws Exception {
 
         double bjellPI = getBjell(sequence)/ bjellNorm;
@@ -109,12 +109,12 @@ public class SvmpI implements IsoelectricPointMethod {
         return currentClassifier.classifyInstance(instance);
     }
 
-    @Override
+   // @Override
     public Double computeChargeAtpH(List<AminoAcid> sequence, Double pH) {
         return null;
     }
 
-    @Override
+   // @Override
     public Map<Double, Double> computeStepMethodPI(List<AminoAcid> sequence) {
         return null;
     }
@@ -174,6 +174,15 @@ public class SvmpI implements IsoelectricPointMethod {
      */
     private Double getZimmermanDescriptor(List<AminoAcid> sequence){
 
+        //To eliminate modifications markers from sequence to avoid incorrect indexing...
+        //It is mandatory to compute correctly the Zimmerman index from sequence...
+        //This solution could be improved.
+        for (int i = 0; i < sequence.size(); i++) {
+            if(sequence.get(i).equals(AminoAcid.n) || sequence.get(i).equals(AminoAcid.m) || sequence.get(i).equals(AminoAcid.o) || sequence.get(i).equals(AminoAcid.p)){
+                 sequence.remove(i);
+            }
+        }
+
         int count = 2;
         double zimmerman = bjellpI.getCTermSelected(sequence.get(sequence.size()-1))+bjellpI.getNTermSelected(sequence.get(0));
         /* Start from 2 taking to account the C and N terminus contribution*/
@@ -228,7 +237,7 @@ public class SvmpI implements IsoelectricPointMethod {
         line.trim();
         String[] attr = line.split(",");
         List<AminoAcid> sequence = new ArrayList<AminoAcid>();
-        for(Character character: attr[0].toCharArray()) sequence.add(AminoAcid.getAminoAcid(character));
+        for(Character character: attr[0].toCharArray()) sequence.add(AminoAcid.getMolecule(character));
         mapSequences.put(sequence,Double.parseDouble(attr[1]));
         return mapSequences;
     }

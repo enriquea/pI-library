@@ -1,7 +1,7 @@
 package uk.ac.ebi.pride.sequence.isoelectricpoint.iterativepI;
 
-import uk.ac.ebi.pride.mol.AminoAcid;
-import uk.ac.ebi.pride.sequence.isoelectricpoint.IsoelectricPointMethod;
+
+import uk.ac.ebi.pride.sequence.utils.AminoAcid;
 
 import java.util.*;
 
@@ -24,7 +24,7 @@ import java.util.*;
  *
  * @author yperez, enrique
  */
-public class IterativepI implements IsoelectricPointMethod {
+public class IterativepI {
 
     public static String SILLERO_PKMETHOD    = "SILLERO";
 
@@ -84,12 +84,12 @@ public class IterativepI implements IsoelectricPointMethod {
     }
 
     /*  Isoelectric point prediction Iterative */
-    @Override
+    //@Override
     public Double computePI(List<AminoAcid> sequence){
         return calculate(sequence);
     }
 
-    @Override
+   // @Override
     public Double computeChargeAtpH(List<AminoAcid> sequence, Double pH){
 
         Map<List<AminoAcid>, Double> charges = new HashMap<List<AminoAcid>, Double>();
@@ -121,7 +121,7 @@ public class IterativepI implements IsoelectricPointMethod {
         return charge;
     }
 
-    @Override
+   // @Override
     public Map<Double,Double> computeStepMethodPI(List<AminoAcid> sequence){
 
         double charge;
@@ -307,8 +307,16 @@ public class IterativepI implements IsoelectricPointMethod {
 
         double charge = 0.0;
 
-        charge += pcharge(pH, NTerm_Pk);
-        charge -= pcharge(CTerm_Pk,pH);
+        //To evaluate N-terminal contribution
+        if(sequence.get(0).equals(AminoAcid.n) || sequence.get(0).equals(AminoAcid.m)){       //n and m means N-terminal Acetylated
+          charge += pcharge(pH, NTerm_Pk);      //otherwise
+          //double NTerm_Pk_Acetyl = 0.0;
+          //charge += pcharge(pH, NTerm_Pk_Acetyl);
+        } else {
+          charge += pcharge(pH, NTerm_Pk);      //otherwise
+        }
+
+          charge -= pcharge(CTerm_Pk,pH);
 
         for (int i = 0; i < sequence.size(); i++){
             AminoAcid aa = sequence.get(i);
@@ -317,6 +325,15 @@ public class IterativepI implements IsoelectricPointMethod {
             }else if((AABasid.contains(aa))){
                 charge -= pcharge(pKIterative.get(aa),pH);
             }
+
+            //to evaluate phosphorilation modification on S and T amino acid (Y is not considered)
+          /* if(aa.equals(AminoAcid.p)){
+                double STpKa1 = 1.2D;        // pk values for phospho-amino (from ProMoST tool)
+                double STpKa2 = 6.5D;
+
+                charge += -1.0D / (1.0D + Math.pow(10.0D, STpKa1 - pH));
+                charge += -1.0D / (1.0D + Math.pow(10.0D, STpKa2 - pH));
+           }*/
         }
         return charge;
     }

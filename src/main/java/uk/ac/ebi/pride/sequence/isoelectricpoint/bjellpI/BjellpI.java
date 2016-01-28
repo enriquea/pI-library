@@ -1,7 +1,7 @@
 package uk.ac.ebi.pride.sequence.isoelectricpoint.bjellpI;
 
-import uk.ac.ebi.pride.mol.AminoAcid;
-import uk.ac.ebi.pride.sequence.isoelectricpoint.IsoelectricPointMethod;
+
+import uk.ac.ebi.pride.sequence.utils.AminoAcid;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.TreeMap;
  *
  * @author yperez
  */
-public class BjellpI implements IsoelectricPointMethod {
+public class BjellpI {
 
 
     public static String BJELL_PKMETHOD      = "BJELL_PKMETHOD";
@@ -287,18 +287,18 @@ public class BjellpI implements IsoelectricPointMethod {
         initMap(); //settings pK values from current pKMethod
     }
 
-    @Override
+  //  @Override
     public Double computePI(List<AminoAcid> sequence){
         return calculate(sequence);
     }
 
 
-    @Override
+  //  @Override
     public Double computeChargeAtpH(List<AminoAcid> sequence, Double pH){
         return getcharge(sequence, Nterm_Pk, Cterm_Pk, sideGroup_Pk, pH);
     }
 
-    @Override
+  //  @Override
     public Map<Double, Double> computeStepMethodPI(List<AminoAcid> sequence) {
 
         double charge;
@@ -381,8 +381,26 @@ public class BjellpI implements IsoelectricPointMethod {
         double pHpK = 0.0D;
         this.FoRmU = 0.0D;
 
-        pHpK = PH - Double.valueOf(AApI_n.get(seq.get(0))).doubleValue();
-        this.FoRmU += 1.0D / (1.0D + Math.pow(10.0D, pHpK));
+
+        //To evaluate N-terminal contribution
+        if(seq.get(0).equals(AminoAcid.n) || seq.get(0).equals(AminoAcid.m)){       //n and m means N-terminal Acetylated
+            pHpK = 0.0;
+            this.FoRmU += 1.0D / (1.0D + Math.pow(10.0D, pHpK));                    //eliminate N-terminal contribution
+        } else {
+            pHpK = PH - Double.valueOf(AApI_n.get(seq.get(0))).doubleValue();
+            this.FoRmU += 1.0D / (1.0D + Math.pow(10.0D, pHpK));                    //otherwise
+        }
+
+        //code to avoid N-terminal modification contribution
+      /* for (AminoAcid aSeq : seq) {
+            if (aSeq.equals(AminoAcid.n) || aSeq.equals(AminoAcid.m) || aSeq.equals(AminoAcid.o) || aSeq.equals(AminoAcid.p)) {
+                int d; //do nothing
+            } else {
+                pHpK = PH - Double.valueOf(AApI_n.get(aSeq)).doubleValue();
+                this.FoRmU += 1.0D / (1.0D + Math.pow(10.0D, pHpK));
+                break;
+            }
+        }*/
 
         pHpK = Double.valueOf(AApI_c.get(seq.get(seq.size()-1))).doubleValue() - PH;
         this.FoRmU += -1.0D / (1.0D + Math.pow(10.0D, pHpK));
@@ -399,9 +417,22 @@ public class BjellpI implements IsoelectricPointMethod {
                     this.FoRmU += -1.0D / (1.0D + Math.pow(10.0D, pHpK));
                 }
             }
+
+            //if(AA.equals(AminoAcid.p)) putPhosphoCharge(PH);
         }
         return this.FoRmU;
     }
+
+    private void putPhosphoCharge(double PH)
+    {
+        double STpKa1 = 1.2D;        // pk values for phospho-amino like
+        double STpKa2 = 6.5D;
+
+        this.FoRmU += -1.0D / (1.0D + Math.pow(10.0D, STpKa1 - PH));
+        this.FoRmU += -1.0D / (1.0D + Math.pow(10.0D, STpKa2 - PH));
+
+    }
+
 
     public double getCTermSelected(AminoAcid AA){
         return Cterm_Pk.get(AA);

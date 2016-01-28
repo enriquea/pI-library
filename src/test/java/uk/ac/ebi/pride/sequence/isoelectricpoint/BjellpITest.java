@@ -3,8 +3,8 @@ package uk.ac.ebi.pride.sequence.isoelectricpoint;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import uk.ac.ebi.pride.mol.AminoAcid;
 import uk.ac.ebi.pride.sequence.isoelectricpoint.bjellpI.BjellpI;
+import uk.ac.ebi.pride.sequence.utils.AminoAcid;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -39,13 +39,14 @@ public class BjellpITest {
         // Computing pI value for a single sequence
 
         List<AminoAcid> sequence = new ArrayList<AminoAcid>();
-        String temp = "EYQLNDSASYYLNDLDR";
-        for(Character character: temp.toCharArray()) sequence.add(AminoAcid.getAminoAcid(character));
+        String temp = "pTpTLCVEILIKEQIR";
+        for(Character character: temp.toCharArray()) sequence.add(AminoAcid.getMolecule(character));
 
         List<List<AminoAcid>> sequences = new ArrayList<List<AminoAcid>>();
         sequences.add(sequence);
 
         Double sequencesPI = calculator.computePI(sequence);
+        System.out.println(sequencesPI);
         assertTrue("Isoelectric Point equal to ", sequencesPI == 3.84);
 
     }
@@ -62,7 +63,7 @@ public class BjellpITest {
 
         //Computing pI values from sequences file
 
-        URL url = BjellpITest.class.getClassLoader().getResource("HellerDataSet.csv");
+        URL url = BjellpITest.class.getClassLoader().getResource("gauci-modified-peptide-data.txt");
         if (url == null) {
             throw new IllegalStateException("no file for input found!");
         }
@@ -73,7 +74,7 @@ public class BjellpITest {
 
         while((tuple = input.readLine())!= null){
 
-            token = new StringTokenizer(tuple, ",");
+            token = new StringTokenizer(tuple, "\t");
             String s = token.nextToken();
             String pIexperimental = token.nextToken();
 
@@ -84,7 +85,7 @@ public class BjellpITest {
                     if(character.equals('X')){
                         continue;
                     }
-                    sequence.add(AminoAcid.getAminoAcid(character));
+                    sequence.add(AminoAcid.getMolecule(character));
                 }
 
                 Double sequencesPI = calculator.computePI(sequence);
@@ -156,7 +157,7 @@ public class BjellpITest {
                 if(character.equals('X')){
                     continue;     //Avoiding not valid character in sequence
                 }
-                sequence.add(AminoAcid.getAminoAcid(character));   //Building Amino Acid sequence
+                sequence.add(AminoAcid.getMolecule(character));   //Building Amino Acid sequence
             }
 
             List<List<AminoAcid>> sequences = new ArrayList<List<AminoAcid>>();
@@ -171,7 +172,7 @@ public class BjellpITest {
 
     @Before
     public void setUp() throws Exception {
-        calculator = BjellpI.getInstance(BjellpI.CALIBRATED_PKMETHOD, 4.8);         //Setting Isoelectric Point method
+        calculator = BjellpI.getInstance(BjellpI.BJELL_PKMETHOD, 7.0);         //Setting Isoelectric Point method
     }
 
     @After

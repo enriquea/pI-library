@@ -3,10 +3,9 @@ package uk.ac.ebi.pride.sequence.isoelectricpoint;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import uk.ac.ebi.pride.mol.AminoAcid;
 import uk.ac.ebi.pride.sequence.isoelectricpoint.bjellpI.BjellpI;
 import uk.ac.ebi.pride.sequence.isoelectricpoint.svmpI.SvmpI;
-import uk.ac.ebi.pride.sequence.utils.SequenceUtils;
+import uk.ac.ebi.pride.sequence.utils.AminoAcid;
 import weka.experiment.PairedStats;
 
 import java.io.File;
@@ -62,7 +61,7 @@ public class SvmpITest {
             bjellpIs[i] = bjellPI;
             exppI[i]    = mapSequences.get(sequence);
             //Printing sequence + pIexperimental + pIpredicted
-            System.out.println(SequenceUtils.convertAminoAcidListToString(sequence) + "\t" + exppI[i]  + "\t" + df.format(svmPI));
+           // System.out.println(SequenceUtils.convertAminoAcidListToString(sequence) + "\t" + exppI[i]  + "\t" + df.format(svmPI));
             i++;
 
         }
@@ -102,7 +101,7 @@ public class SvmpITest {
             stringLine.trim();
             String[] attr = stringLine.split(",");
             List<AminoAcid> sequence = new ArrayList<AminoAcid>();
-            for(Character character: attr[0].toCharArray()) sequence.add(AminoAcid.getAminoAcid(character));
+            for(Character character: attr[0].toCharArray()) sequence.add(AminoAcid.getMolecule(character));
             mapSequences.put(sequence, Double.parseDouble(attr[1]));
         }
         calculator = SvmpI.getInstance(mapSequences, false);
