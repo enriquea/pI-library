@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="84854ced-8ef2-43a7-a94f-c13a390e2dde" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/sequence_features_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/bjellpI/BjellpI.java" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/bjellpI/BjellpI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/BjellpITest.java" afterPath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/BjellpITest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CalculatorPiAllMethodsTest.java" afterPath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CalculatorPiAllMethodsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/cofactorAdjacentpI/CofactorAdjacentpI.java" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/cofactorAdjacentpI/CofactorAdjacentpI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CofactorAdjacentpITest.java" afterPath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/CofactorAdjacentpITest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/iterativepI/IterativepI.java" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/iterativepI/IterativepI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/IterativepITest.java" afterPath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/IterativepITest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/SvmpI.java" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/SvmpI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/SvmpITest.java" afterPath="$PROJECT_DIR$/src/test/java/uk/ac/ebi/pride/sequence/isoelectricpoint/SvmpITest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sequence_features_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sequence_features_jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pride-features.iws" />
@@ -29,7 +19,7 @@
     <file path="/SequenceConverterTest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434002878571" ignored="false" />
     <file path="/SequenceTest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1384210217678" ignored="false" />
     <file path="/ModificationTest.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1434002855683" ignored="false" />
-    <file path="/Dummy.txt" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1453955331057" ignored="false" />
+    <file path="/Dummy.txt" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1453955929533" ignored="false" />
     <file path="/AminoAcidTerminal.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1384201554902" ignored="false" />
     <file path="$USER_HOME$/IdeaProjects/ProofConceptJava/src/SingletonClass.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1384374930240" ignored="false" />
     <file path="/SingletonClass.java" changelist="84854ced-8ef2-43a7-a94f-c13a390e2dde" time="1384370939921" ignored="false" />
@@ -183,7 +173,7 @@
       <file leaf-file-name="SvmpI.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/SvmpI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="0" selection-start="7152" selection-end="7152" vertical-scroll-proportion="0.6380544">
+            <state line="183" column="6" selection-start="7379" selection-end="7379" vertical-scroll-proportion="0.71101576">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8769#8786#0" expanded="true" />
@@ -927,6 +917,11 @@
       <created>1366338976537</created>
       <updated>1366338976537</updated>
     </task>
+    <task id="LOCAL-00001" summary="some changes">
+      <created>1453955971295</created>
+      <updated>1453955971295</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1025,7 +1020,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1039,6 +1034,7 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="some changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1153,7 +1149,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/ac/ebi/pride/sequence/isoelectricpoint/svmpI/SvmpI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="0" selection-start="7152" selection-end="7152" vertical-scroll-proportion="0.6380544">
+        <state line="183" column="6" selection-start="7379" selection-end="7379" vertical-scroll-proportion="0.71101576">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8769#8786#0" expanded="true" />
