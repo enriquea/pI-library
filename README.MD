@@ -25,8 +25,6 @@ The current version have available several test methods that shows the way to co
          assertTrue("Isoelectric Point equal to ", sequencesPI == 3.5011146068573);
 
 
-### How to cite
-* Enrique Audain, Yassel Ramos, Henning Hermjakob, Darren R. Flower and Yasset Perez-Riverol (2015). Comparative Benchmarking Methods Estimating Isoelectric Point (pI) of Peptide and Proteins from Amino Acid Sequence. Summited to Bioinformatics.   
   
 
 
